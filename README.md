@@ -16,7 +16,7 @@ mkdir -p /data/openvpn
 ```
 docker run \
 	--name OPENVPN
-	--privileged \
+	--cap-add NET_ADMIN \
 	-p 1194:1194 \
 	-v "/data/openvpn:/openvpn" \
 	tsaikd/docker-openvpn
@@ -46,4 +46,3 @@ docker exec "OPENVPN" ovpn_revoke CLIENTNAME
 ## Reference
 
 * https://github.com/kylemanna/docker-openvpn
-

@@ -3,7 +3,7 @@
 cn="${1}"
 proto="${2}"
 host="${3}"
-port="${4}"
+port="${4:-1194}"
 
 function usage() {
 	local msg="$*"
@@ -69,4 +69,3 @@ remote ${host} ${port} ${proto}
 </connection>
 redirect-gateway def1
 EOF
-
