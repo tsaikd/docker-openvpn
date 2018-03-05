@@ -44,7 +44,7 @@ cat <<EOF
 client
 nobind
 dev tun
-comp-lzo
+compress lz4
 remote-cert-tls server
 
 <key>
