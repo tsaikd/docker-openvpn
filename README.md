@@ -17,6 +17,7 @@ mkdir -p /data/openvpn
 docker run \
 	--name OPENVPN
 	--cap-add NET_ADMIN \
+	-e OPENVPN_PROTO=tcp \
 	-p 1194:1194 \
 	-v "/data/openvpn:/openvpn" \
 	tsaikd/docker-openvpn

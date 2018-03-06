@@ -24,5 +24,6 @@ if ! iptables -t nat -A POSTROUTING -s 192.168.255.0/24 -o eth0 -j MASQUERADE ; 
 fi
 
 sed -i "s|\${EASYRSA_PKI}|${EASYRSA_PKI}|g" "/etc/openvpn/openvpn.conf"
+sed -i "s|\${OPENVPN_PROTO}|${OPENVPN_PROTO:-tcp}|g" "/etc/openvpn/openvpn.conf"
 
 openvpn --config "/etc/openvpn/openvpn.conf"
