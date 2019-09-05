@@ -23,6 +23,12 @@ docker run \
 	tsaikd/openvpn
 ```
 
+* Or you can alternatively start OpenVPN server with docker-compose
+
+```
+docker-compose up -d
+```
+
 * Generate a client certificate without a passphrase
 
 ```
