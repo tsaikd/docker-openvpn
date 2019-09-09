@@ -1,0 +1,16 @@
+version: "2"
+services:
+  OPENVPN:
+    build: ./
+    restart: always
+    image: openvpn
+    container_name: OPENVPN
+    cap_add:
+      - NET_ADMIN
+    environment:
+      - OPENVPN_PROTO=tcp
+    volumes:
+      - /data/openvpn:/openvpn
+    ports:
+      - 1194:1194/tcp
+
