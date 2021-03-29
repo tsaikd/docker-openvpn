@@ -97,3 +97,13 @@ $ apk add --no-cache curl
 $ curl http://ifconfig.io
 ```
 
+## UDP Mode
+The OpenVPN documentation recommends using the UDP protocol : 
+
+*The OpenVPN protocol itself functions best over just the UDP protocol. And by default the connection profiles that you can download from the Access Server are preprogrammed to always first try UDP, and if that fails, then try TCP*
+
+To do this you just need to change the environment variable to `OPENVPN_PROTO=udp`.
+
+Then you specify to contact the udp protocol of your container by doing this : `"1194:1194/udp"`
+
+So when you will create a client file, you just have to change from `tcp` to `udp`.
